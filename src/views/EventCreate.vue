@@ -74,9 +74,6 @@ export default {
     */
   // })
   computed: {
-    catLength() {
-      return this.$store.getters.catLength
-    },
     ...mapState(['user', 'categories'])
   },
   components: {
@@ -104,9 +101,7 @@ export default {
           })
           this.event = this.createFreshEvent()
         })
-        .catch(error => {
-          console.error(error.message)
-        })
+        .catch(() => {})
     },
     createFreshEvent() {
       const user = this.$store.state.user.user
